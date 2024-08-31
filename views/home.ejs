@@ -1,16 +1,15 @@
-
-<%- include("partials/header") %>
-<h1>Home</h1>
-<%console.log(posts);%>
-<p><%= startingContent %></p>
+<%- include("partials/header") %> <%console.log(posts);%>
+<h2 class="home"><%= startingContent %></h2>
+<h2 class="home"><%= startingContent1 %></h2>
+<div class="btn">
+  <a href="/compose"><button class="home-btn p-2">Write Blog</button></a>
+</div>
 <%posts.forEach(function(post){%>
 
-    <h1><%=post.title%></h1>
-    <p>
+<h3 class="title"><%=post.title%></h3>
+<p class="para">
+  <%=post.content.substring(0,100)+" ..."%>
+  <a href="/posts/<%=post.title%>">Read More</a>
+</p>
 
-    <%=post.content.substring(0,100)+" ..."%>
-        <a href="/posts/<%=post.title%>">Read More</a>
-    </p>
-      
-    <%})%>
-<%- include("partials/footer") %>
+<%})%> <%- include("partials/footer") %>
